@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Package <%= name %></title>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css" />
+        <script src="/index.js" defer></script>
+    </head>
+    <body>
+        <form class="container" action="/pack/<%= pack?.id %>" method="post">
+            <label for="name">Name</label>
+            <input
+                type="text"
+                name="name"
+                id="name"
+                value="<%= pack?.name %>" />
+            <label for="description">Description</label>
+            <textarea name="description" id="description">
+<%= pack?.description %></textarea
+            >
+            <label for="release">Release</label
+            ><input
+                type="date"
+                name="release"
+                id="release"
+                value="<%= pack?.releases[0]?.date %>" />
+
+            <button type="submit">Update package</button>
+        </form>
+    </body>
+</html>
